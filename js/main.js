@@ -8,11 +8,18 @@ window.onload = function getFetch() {
     fetch(url)
         .then(res => res.json()) // parse response as JSON
         .then(data => {
-            console.log(data[0])
+            console.log(data[0].inhabitants[0])
             // document.querySelector('#planetId').src = data[0].id
             document.querySelector('h2').innerText = data[0].name
             document.querySelector('img').src = data[0].img_url
-            document.querySelector('li').innerText = data[0].inhabitants[0]
+            document.querySelector('h3').innerText = data[0].inhabitants;
+            data[0].name.forEach((item) => {
+                displayList.push(item.name);
+                let li = document.createElement("li");
+                li.innerText = item.name;
+                list.appendChild(li);
+            })
+            console.log(displayList)
             document.querySelector('h4').innerText = data[0].notable_residents
         })
         .catch(err => {

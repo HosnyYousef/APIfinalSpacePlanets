@@ -21,7 +21,19 @@
 /* BASE STYLES
 /*******************************************/
 
-body {}
+html, button {
+     background-color: black;
+     color: grey;
+}
+
+input{
+     background-color: black;
+     color: white;
+}
+
+body {
+     margin: 50px;
+}
 
 img {
      width: 50%;
