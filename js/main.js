@@ -5,6 +5,8 @@ window.onload = function getFetch() {
     const choice = (document.querySelector('input').value).toLowerCase()
     const url = 'https://finalspaceapi.com/api/v0/location/'
 
+    let displayList = document.querySelector('li').innerText;
+
     fetch(url)
         .then(res => res.json()) // parse response as JSON
         .then(data => {
@@ -13,10 +15,11 @@ window.onload = function getFetch() {
             document.querySelector('h2').innerText = data[0].name
             document.querySelector('img').src = data[0].img_url
             document.querySelector('li').innerText = data[0].inhabitants;
+            let displayList = []
             data[0].inhabitants.forEach((item) => {
                 displayList.push(item.inhabitants);
                 let li = document.createElement("li");
-                li.innerText = item.inhabitants;
+                li.innerText = item;
                 list.appendChild(li);
             })
             console.log(displayList)
