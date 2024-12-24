@@ -21,21 +21,21 @@ window.onload = function getFetch() {
         });
 }
 
+// trying to work notiable characters
 
+// window.onload = function getFetch() {
+//     const choice = (document.querySelector('input').value).toLowerCase()
+//     const url = 'https://finalspaceapi.com/api/v0/character/'
 
-window.onload = function getFetch() {
-    const choice = (document.querySelector('input').value).toLowerCase()
-    const url = 'https://finalspaceapi.com/api/v0/character/'
-
-    fetch(url)
-        .then(res => res.json()) // parse response as JSON
-        .then(data => {
-            console.log(data[0])
-        })
-        .catch(err => {
-            console.log(`error ${err}`)
-        });
-}
+//     fetch(url)
+//         .then(res => res.json()) // parse response as JSON
+//         .then(data => {
+//             console.log(data[0])
+//         })
+//         .catch(err => {
+//             console.log(`error ${err}`)
+//         });
+// }
 
 // https://finalspaceapi.com/api/v0/character/
 
