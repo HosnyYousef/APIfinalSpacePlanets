@@ -1,15 +1,14 @@
 
 const planets = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
-const random = (Math.floor(Math.random() * planets.length))
-let planetList = (planets[random]);
-console.log(planetList)
+document.querySelector('button').addEventListener('click', getFetch)
 
-window.onload = function getFetch() {
-    const choice = (document.querySelector('input').value).toLowerCase()
+function getFetch() {
+    let planetNumber = (document.querySelector('input').value.toLowerCase())
+
     const url = 'https://finalspaceapi.com'
 
-    fetch(`${url}/api/v0/location/`+planetList)
+    fetch(`${url}/api/v0/location/`+ planetNumber)
         .then(res => res.json()) // parse response as JSON
         .then(data => {
             // const notableResId = data.character;
